@@ -3,7 +3,7 @@
 This is my personal portfolio website built using HTML, CSS, and deployed via GitHub Pages.
 
 ## 🚀 Live URL
-[https://your-username.github.io/your-repo-name](https://your-username.github.io/your-repo-name)
+https://shafeeksdq.github.io/portfolio/
 
 ## 🛠️ Tech Stack
 - HTML5
@@ -26,5 +26,5 @@ This is my personal portfolio website built using HTML, CSS, and deployed via Gi
 
 ## 📬 Contact
 Email: shafeeksidhiq@example.com  
-GitHub: [@shafeeksidhiq](https://github.com/shafeeksidhiq)  
-LinkedIn: [linkedin.com/in/shafeeksidhiq](https://linkedin.com/in/shafeeksidhiq)
+GitHub: https://github.com/ShafeekSDQ
+LinkedIn:https://linkedin.com/in/shafeek-sidhiq
