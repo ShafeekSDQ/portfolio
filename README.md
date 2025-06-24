@@ -25,6 +25,6 @@ https://shafeeksdq.github.io/portfolio/
 4. Enable Pages in repo settings
 
 ## 📬 Contact
-Email: shafeeksidhiq@example.com  
+Email: shafeeksidhiq1911@gmail.com  
 GitHub: https://github.com/ShafeekSDQ
 LinkedIn:https://linkedin.com/in/shafeek-sidhiq
