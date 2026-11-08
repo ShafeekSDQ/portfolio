@@ -1,6 +1,6 @@
-# Shafeek Sidhiq | Information Security & GRC Portfolio
+# Shafeek Sidhiqu | Information Security & GRC Portfolio
 
-Personal portfolio of Shafeek Sidhiq, an information security professional with 2+ years of experience in cybersecurity assessments, incident response and vulnerability management, now moving into Governance, Risk & Compliance (GRC).
+Personal portfolio of Shafeek Sidhiqu, an information security professional with 2+ years of experience in cybersecurity assessments, incident response and vulnerability management, now moving into Governance, Risk & Compliance (GRC).
 
 **Live site:** https://shafeeksdq.github.io/portfolio/
 
