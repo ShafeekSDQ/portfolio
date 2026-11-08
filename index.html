@@ -1,324 +1,396 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shafeek Sidhiqu | Cybersecurity & GRC Professional</title>
-  <meta name="description" content="Shafeek Sidhiqu — Information Security professional with 2+ years across VAPT, incident response, and Governance, Risk & Compliance. Fujairah, UAE.">
-  <meta name="author" content="Shafeek Sidhiqu">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Montserrat:wght@600;700;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shafeek Sidhiq | Information Security & GRC</title>
+<meta name="description" content="Information security professional with 2+ years in cybersecurity assessments, incident response and vulnerability management, moving into Governance, Risk & Compliance (ISO 27001, GDPR, audit readiness).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EAEFF2;
+  --card:#F7F9FA;
+  --ink:#0E2430;
+  --ink-2:#27414F;
+  --muted:#5B7380;
+  --line:#C9D5DB;
+  --deep:#0A1F2A;
+  --deep-2:#10303F;
+  --amber:#F0A21A;
+  --amber-ink:#7A4B00;
+  --ok:#3E8F6B;
+  --risk-lo:#BFD9CB; --risk-md:#F1DE9B; --risk-hi:#EDB27A; --risk-cr:#D9715F;
+  --sans:'Schibsted Grotesk',system-ui,sans-serif;
+  --serif:'Newsreader',Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:rgba(10,31,42,.94);backdrop-filter:blur(8px);color:#fff}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{white-space:nowrap;font-weight:800;text-decoration:none;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
+.logo i{width:26px;height:26px;border-radius:6px;background:var(--amber);color:var(--deep);display:grid;place-items:center;font-style:normal;font-size:13px;font-weight:800}
+nav ul{display:flex;gap:26px;list-style:none}
+nav ul a{text-decoration:none;font-size:15px;color:#BFD0D8;font-weight:500}
+nav ul a:hover{color:#fff}
+
+/* hero */
+.hero{background:var(--deep);color:#fff;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(900px 400px at 85% 10%,rgba(240,162,26,.12),transparent 60%);pointer-events:none}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;padding-top:80px;padding-bottom:88px;position:relative}
+.who{display:flex;align-items:center;gap:14px;margin-bottom:28px;color:#BFD0D8;font-size:15px}
+.avatar{width:56px;height:56px;border-radius:50%;background:var(--deep-2);border:2px solid var(--amber);display:grid;place-items:center;font-weight:700;color:var(--amber);overflow:hidden;flex:none}
+.avatar img{width:100%;height:100%;object-fit:cover;display:block}
+h1{font-family:var(--serif);font-weight:500;font-size:clamp(40px,6vw,72px);line-height:1.02;letter-spacing:-.02em}
+h1 em{font-style:italic;color:var(--amber)}
+.lede{margin-top:26px;max-width:34em;font-size:19px;color:#C9D8DF}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.btn{display:inline-block;padding:13px 22px;border-radius:8px;font-weight:600;text-decoration:none;font-size:16px;border:1.5px solid transparent;transition:transform .15s,background .15s}
+.btn.primary{background:var(--amber);color:var(--deep)}
+.btn.primary:hover{background:#ffb934}
+.btn.ghost{border-color:#3C5A69;color:#fff}
+.btn.ghost:hover{border-color:#fff}
+.btn:active{transform:translateY(1px)}
+
+/* risk matrix */
+.matrix-box{background:var(--deep-2);border:1px solid #234A5C;border-radius:14px;padding:22px 22px 18px}
+.matrix-title{display:flex;justify-content:space-between;font-size:14px;color:#9EB6C2;margin-bottom:14px}
+.matrix-title b{color:#fff;font-weight:600}
+.mx{display:grid;grid-template-columns:22px 1fr;grid-template-rows:1fr 22px;gap:6px}
+.mx .ylab{writing-mode:vertical-rl;transform:rotate(180deg);text-align:center;font-size:12px;color:#7F9AA8}
+.mx .xlab{grid-column:2;text-align:center;font-size:12px;color:#7F9AA8}
+.grid{position:relative;display:grid;grid-template-columns:repeat(5,1fr);grid-template-rows:repeat(5,1fr);gap:4px;aspect-ratio:1}
+.grid span{border-radius:5px}
+.dot{position:absolute;width:20%;height:20%;display:grid;place-items:center;transition:left 1.6s cubic-bezier(.65,0,.25,1) .9s,top 1.6s cubic-bezier(.65,0,.25,1) .9s}
+.dot b{width:62%;aspect-ratio:1;border-radius:50%;background:var(--deep);color:#fff;font-size:11px;font-weight:700;display:grid;place-items:center;box-shadow:0 0 0 3px #fff}
+.dot.r7{left:60%;top:0}
+.matrix-box.treated .dot.r7{left:20%;top:60%}
+.dot.r7 b{background:var(--deep)}
+.status{margin-top:14px;display:flex;align-items:center;gap:10px;font-size:14px;color:#C9D8DF;min-height:24px}
+.pill{padding:2px 10px;border-radius:99px;font-size:12px;font-weight:700;background:#5A2E27;color:#FFC7BC;transition:background .4s,color .4s}
+.treated .pill{background:#1E4A38;color:#B7F0D4}
+.matrix-box button{margin-left:auto;background:none;border:1px solid #3C5A69;color:#C9D8DF;border-radius:6px;padding:3px 10px;font:inherit;font-size:13px;cursor:pointer}
+.matrix-box button:hover{border-color:#fff;color:#fff}
+
+/* sections */
+section{padding:96px 0}
+section.alt{background:var(--card);border-block:1px solid var(--line)}
+.head{display:grid;grid-template-columns:240px 1fr;gap:40px;margin-bottom:48px}
+h2{font-family:var(--serif);font-weight:500;font-size:34px;line-height:1.15;letter-spacing:-.01em}
+.head p{color:var(--muted);max-width:36em}
+.body-serif{font-family:var(--serif);font-size:21px;line-height:1.6;color:var(--ink-2);max-width:34em}
+
+/* about */
+.about{display:grid;grid-template-columns:240px 1fr;gap:40px}
+.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:36px;max-width:640px}
+.facts div{background:var(--card);padding:18px 20px}
+.facts strong{display:block;font-size:26px;font-weight:700;letter-spacing:-.02em;line-height:1.1}
+.facts span{font-size:14px;color:var(--muted)}
+
+/* timeline */
+.tl{position:relative;display:grid;gap:36px}
+.tl::before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:var(--line)}
+.job{position:relative;padding-left:44px}
+.job::before{content:"";position:absolute;left:0;top:7px;width:16px;height:16px;border-radius:50%;background:var(--paper);border:3px solid var(--muted)}
+.job.now::before{border-color:var(--amber);background:var(--amber)}
+.job-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 20px}
+.job h3{font-size:21px;font-weight:700;letter-spacing:-.01em}
+.when{font-size:15px;color:var(--muted);font-weight:500}
+.org{color:var(--ink-2);margin-top:2px}
+.job ul{margin-top:14px;display:grid;gap:9px;list-style:none;max-width:46em}
+.job li{padding-left:18px;position:relative;color:var(--ink-2);font-size:16.5px}
+.job li::before{content:"";position:absolute;left:0;top:.72em;width:7px;height:2px;background:var(--amber)}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.sk{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:24px}
+.sk.wide{grid-column:1/-1}
+.sk h3{font-size:17px;font-weight:700;margin-bottom:14px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tags span{font-size:14.5px;padding:4px 12px;border-radius:99px;background:var(--paper);border:1px solid var(--line);color:var(--ink-2)}
+.sk.focus{background:var(--deep);border-color:var(--deep);color:#fff}
+.sk.focus .tags span{background:var(--deep-2);border-color:#234A5C;color:#DCE8ED}
+
+/* projects */
+.reg{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--card)}
+.row{display:grid;grid-template-columns:1.1fr 1.6fr .9fr;gap:28px;padding:26px 28px;border-top:1px solid var(--line)}
+.row:first-child{border-top:0}
+.row h3{font-size:19px;font-weight:700;line-height:1.3}
+.row .fw{display:inline-block;margin-top:8px;font-size:13.5px;color:var(--amber-ink);background:#FBEBC8;padding:2px 10px;border-radius:99px;font-weight:600}
+.row ul{list-style:none;display:grid;gap:8px;color:var(--ink-2);font-size:16px}
+.row li{padding-left:18px;position:relative}
+.row li::before{content:"";position:absolute;left:0;top:.72em;width:7px;height:2px;background:var(--amber)}
+.row .stack{font-size:14.5px;color:var(--muted)}
+
+/* creds */
+.creds{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.cert{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--amber);border-radius:10px;padding:22px 24px}
+.cert h3{font-size:18px;font-weight:700;line-height:1.3}
+.cert .meta{font-size:14.5px;color:var(--muted);margin:4px 0 10px}
+.cert p{font-size:15.5px;color:var(--ink-2)}
+.edu{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.edu div{padding:6px 0}
+.edu h3{font-size:17px;font-weight:700}
+.edu p{color:var(--muted);font-size:15.5px}
+.sub{font-size:14px;font-weight:700;color:var(--muted);margin:36px 0 14px}
+
+/* contact */
+.contact{background:var(--deep);color:#fff;padding:96px 0 40px}
+.contact h2{font-size:clamp(32px,5vw,52px);max-width:14em}
+.contact p.lede{margin-top:16px}
+.links{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.links a{display:flex;flex-direction:column;padding:16px 22px;border:1px solid #234A5C;border-radius:10px;text-decoration:none;background:var(--deep-2);min-width:230px;transition:border-color .15s}
+.links a:hover{border-color:var(--amber)}
+.links small{color:#8FA9B6;font-size:13px}
+.links span{font-weight:600}
+footer{margin-top:72px;padding-top:22px;border-top:1px solid #1D3F50;color:#8FA9B6;font-size:14px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+@media (max-width:860px){
+  .hero .wrap{grid-template-columns:1fr;gap:44px;padding-top:56px;padding-bottom:64px}
+  .head,.about{grid-template-columns:1fr;gap:12px}
+  .skills,.creds,.edu{grid-template-columns:1fr}
+  .row{grid-template-columns:1fr;gap:14px}
+  section{padding:68px 0}
+  nav ul{gap:16px}
+  nav ul a{font-size:14px}
+  nav ul li:nth-child(n+5){display:none}
+}
+@media (max-width:420px){nav ul li:nth-child(n+3){display:none}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .dot{transition:none}
+}
+</style>
 </head>
 <body>
-  <div class="grid-bg" aria-hidden="true"></div>
 
-  <a class="skip" href="#about">Skip to content</a>
-
-  <header class="hero">
-    <div class="hero-inner container">
-      <div class="hero-img">
-        <img src="profile.jpg" alt="Portrait of Shafeek Sidhiqu" class="profile-img" id="profile-img">
-        <span class="status-dot" title="Open to opportunities"></span>
-      </div>
-      <div class="hero-copy">
-        <h1>Shafeek <span class="accent">Sidhiqu</span></h1>
-        <p class="tagline">Information Security Professional — GRC &amp; Cybersecurity</p>
-        <p class="sub">Fujairah, UAE · <a href="mailto:shafeeksidhiq1911@gmail.com">shafeeksidhiq1911@gmail.com</a> · +971 50 997 4569</p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="#contact">Contact</a>
-          <a class="btn btn-ghost" href="https://www.linkedin.com/in/shafeek-sidhiq" target="_blank" rel="noopener">LinkedIn</a>
-          <a class="btn btn-ghost" href="https://github.com/ShafeekSDQ" target="_blank" rel="noopener">GitHub</a>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <nav id="main-nav" aria-label="Primary">
-    <div class="container nav-inner">
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#certifications">Certifications</a>
-      <a href="#education">Education</a>
-      <a href="#achievements">Achievements</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
-
-  <main>
-    <section id="about" class="container">
-      <h2><span class="num">01</span> About</h2>
-      <p class="lead">Information Security professional with 2+ years across cybersecurity assessments, incident response, and vulnerability management — now moving into <strong>Governance, Risk &amp; Compliance (GRC)</strong>.</p>
-      <p>Skilled in <strong>ISO 27001, risk assessment, and audit readiness</strong>, with documentation governance delivered across <strong>15+ multi-million projects</strong> Assessed approximately <strong>20 applications</strong> and supported <strong>5 incident response</strong> activities at CERT-K.</p>
-      <div class="stats">
-        <div class="stat"><span>2+</span><label>Years in InfoSec</label></div>
-        <div class="stat"><span>15+</span><label>Projects governed</label></div>
-        <div class="stat"><span>20</span><label>Apps assessed</label></div>
-        <div class="stat"><span>5</span><label>IR activities</label></div>
-      </div>
-    </section>
-
-    <section id="experience" class="container">
-      <h2><span class="num">02</span> Experience</h2>
-
-      <article class="exp-card">
-        <div class="exp-head">
-          <h3>Document Controller</h3>
-          <span class="exp-meta">Fujairah National Group (Contractor Side) · Fujairah, UAE · Nov 2025 – Present</span>
-        </div>
-        <ul>
-          <li>Managed controlled documentation lifecycle (RFIs, technical submittals, consultant communications, revisions, project records) across 15+ multi-million projects, using Autodesk Build.</li>
-          <li>Coordinated submission and approval workflows between contractor, consultant, subcontractors, and internal project teams, tracking responses and revisions through to closure.</li>
-          <li>Maintained manual and system-based trackers for approval status, document versions, submission dates, consultant comments, and resubmission requirements.</li>
-          <li>Prepared structured QC reports, meeting minutes, and management-facing documentation from site inputs using Copilot and Claude.</li>
-          <li>Strengthened audit readiness and traceability via organized records, version control, approval history, and compliance documentation.</li>
-        </ul>
-      </article>
-
-      <article class="exp-card">
-        <div class="exp-head">
-          <h3>Cybersecurity Engineer Trainee</h3>
-          <span class="exp-meta">Kerala State IT Mission (CERT-K) · Thiruvananthapuram · Nov 2024 – Sep 2025</span>
-        </div>
-        <ul>
-          <li>Assessed ~20 applications (web, mobile, API, infra, cloud) across pre-staging, post-staging, and final testing phases, following OWASP Top 10 and security best practices.</li>
-          <li>Identified authentication weaknesses, IDOR, input-validation flaws, and misconfigurations; documented them for remediation.</li>
-          <li>Supported 5 incident response activities: log review, IOC identification, digital evidence collection, forensic support, and threat containment.</li>
-          <li>Prepared structured vulnerability reports, incident notes, and technical documentation for remediation and compliance.</li>
-          <li>Assisted infrastructure security reviews covering firewall configs, server hardening, and policy alignment.</li>
-        </ul>
-      </article>
-
-      <article class="exp-card">
-        <div class="exp-head">
-          <h3>Cybersecurity Intern</h3>
-          <span class="exp-meta">ICT Academy of Kerala · Thiruvananthapuram · Jul 2024 – Oct 2024</span>
-        </div>
-        <ul>
-          <li>Completed Certified Specialist in Cyber Security Analyst training: vulnerability assessment, network security, incident handling, secure application testing.</li>
-          <li>Simulated attack scenarios using Metasploit, Burp Suite, Wireshark, and Nmap to understand threat behavior and mitigation.</li>
-          <li>Built and presented capstone security projects on vulnerability management, threat modeling, and incident handling fundamentals.</li>
-          <li>Deepened knowledge of NIST and ISO 27001 frameworks.</li>
-        </ul>
-      </article>
-    </section>
-
-    <section id="skills" class="container">
-      <h2><span class="num">03</span> Skills</h2>
-      <div class="skills-grid">
-        <div class="skill-group">
-          <h3>Governance, Risk &amp; Compliance</h3>
-          <p>ISO 27001 · ISMS · NIST · Risk Assessment · Risk Register · Policy Documentation · Compliance Tracking · Audit Support · Documentation Governance · Approval Workflow Management</p>
-        </div>
-        <div class="skill-group">
-          <h3>Data Privacy</h3>
-          <p>GDPR · PDPB · DPIA · Data Subject Rights · Privacy Governance</p>
-        </div>
-        <div class="skill-group">
-          <h3>Cybersecurity</h3>
-          <p>Incident Response · Vulnerability Assessment · Penetration Testing Fundamentals · OWASP Top 10 · Threat Identification · Network Security · Log Analysis · Security Reporting</p>
-        </div>
-        <div class="skill-group">
-          <h3>AI &amp; Productivity</h3>
-          <p>Generative AI · Copilot · Claude · Prompt Engineering · AI-Assisted Research &amp; Documentation · Workflow Optimization</p>
-        </div>
-        <div class="skill-group">
-          <h3>Tools</h3>
-          <p>Autodesk Build · Autodesk Forma · Burp Suite · OWASP ZAP · Wireshark · Nmap · Metasploit · MobSF · Tenable SC · Postman · Kali Linux</p>
-        </div>
-        <div class="skill-group">
-          <h3>Languages &amp; Frameworks</h3>
-          <p>Python · Bash · C · SQL · Django · React</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects" class="container">
-      <h2><span class="num">04</span> Projects</h2>
-
-      <div class="project-card">
-        <h3>Websec4U — Vulnerability Scanner <span class="tag">Python · Django · React</span></h3>
-        <p>Full-stack scanner that automates detection, prioritization, and reporting of web security issues. Detection aligned with <strong>OWASP Top 10 2021</strong> and <strong>SANS Top 25</strong>.</p>
-      </div>
-
-      <div class="project-card">
-        <h3>VAPT Capstone Project <span class="tag">Standard VAPT Methodology</span></h3>
-        <p>Identified and documented 15+ vulnerabilities across test environments and prepared remediation-focused security reports.</p>
-      </div>
-
-      <div class="project-card">
-        <h3>Risk Register Development <span class="tag">ISO 27001</span></h3>
-        <p>Built a sample information security risk register covering assets, threats, vulnerabilities, likelihood, impact, risk level, control owner, and mitigation actions. Applied ISO 27001 risk assessment concepts to prioritize risks and recommend practical controls.</p>
-      </div>
-
-      <div class="project-card">
-        <h3>Security Policy Documentation <span class="tag">ISO 27001</span></h3>
-        <p>Developed sample password and access-control policies covering account security, MFA, complexity, lockout controls, and user responsibility. Mapped requirements to control objectives and audit evidence examples.</p>
-      </div>
-    </section>
-
-    <section id="certifications" class="container">
-      <h2><span class="num">05</span> Certifications</h2>
-      <ul class="certs">
-        <li><strong>Certified Data Protection Officer (CDPO)</strong> — FCRF Academy · Oct 2025<br><small>Data privacy · GDPR · PDPB · DPIA · Data subject rights · Privacy governance</small></li>
-        <li><strong>Certified Specialist in Cyber Security Analyst (CSA)</strong> — ICT Academy of Kerala · Oct 2024<br><small>Ethical hacking · vulnerability management · network security · incident handling</small></li>
-      </ul>
-    </section>
-
-    <section id="education" class="container">
-      <h2><span class="num">06</span> Education</h2>
-      <ul class="edu">
-        <li><strong>B.Tech in Computer Science and Engineering</strong> — APJ Abdul Kalam Technological University (2020–2024)</li>
-      </ul>
-    </section>
-
-    <section id="achievements" class="container">
-      <h2><span class="num">07</span> Achievements</h2>
-      <ul>
-        <li>🏆 Ranked in the <strong>top 10% of learners</strong> on TryHackMe through hands-on cybersecurity labs.</li>
-      </ul>
-    </section>
-
-    <section id="contact" class="container">
-      <h2><span class="num">08</span> Contact</h2>
-      <p>Have a project, a compliance question, or a security assessment in mind? Let's talk.</p>
-      <form action="https://formspree.io/f/mvgrvpzy" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required aria-label="Your name">
-        <input type="email" name="email" placeholder="Your Email" required aria-label="Your email">
-        <textarea name="message" rows="5" placeholder="Your Message" required aria-label="Your message"></textarea>
-        <button type="submit" class="btn btn-primary">Send Message</button>
-      </form>
-      <p style="margin-top:1.5rem">Or reach out via:</p>
-      <p><a href="mailto:shafeeksidhiq1911@gmail.com">shafeeksidhiq1911@gmail.com</a> · +971 50 997 4569</p>
-      <p class="social-links">
-        <a href="https://www.linkedin.com/in/shafeek-sidhiq" target="_blank" rel="noopener"><img src="linkedin.png" alt="LinkedIn" width="32" height="32"></a>
-        <a href="https://github.com/ShafeekSDQ" target="_blank" rel="noopener"><img src="github.png" alt="GitHub" width="32" height="32"></a>
-      </p>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <p>© 2025 Shafeek Sidhiqu · Fujairah, UAE · Cybersecurity &amp; GRC</p>
-    </div>
-  </footer>
-
-  <script>
-    const header = document.querySelector('header.hero');
-    const nav = document.querySelector('#main-nav');
-    const img = document.getElementById('profile-img');
-    const sticky = nav.offsetTop;
-    const onScroll = () => {
-      nav.classList.toggle('scrolled', window.scrollY > sticky);
-      const y = Math.min(window.scrollY * 0.25, 60);
-      img.style.transform = `translateY(${y}px)`;
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-  </script>
-=======
-  <title>Shafeek Sidhiq | Cybersecurity Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header>
-    <img src="profile.jpg" alt="Shafeek Sidhiq">
-    <h1>Shafeek Sidhiq</h1>
-    <p>Cybersecurity Analyst | Ethical Hacker | Cloud & Web App Defender</p>
-  </header>
-
-  <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#certifications">Certifications</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I'm a cybersecurity analyst with hands-on experience in VAPT, web app pentesting, and cloud security. I've tackled real-world scenarios like hacking vulnerable VMs, auditing web apps, and building secure Flask applications. Trained at CERT-K and constantly evolving, I aim to blend offensive security skills with secure software practices to help build a safer digital world.</p>
-  </section>
-
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills-container">
-      <div class="skill">
-        <div class="skill-name">Kali Linux</div>
-        <div class="skill-bar"><div class="skill-bar-fill" style="width: 90%;"></div></div>
-      </div>
-      <div class="skill">
-        <div class="skill-name">Burp Suite</div>
-        <div class="skill-bar"><div class="skill-bar-fill" style="width: 85%;"></div></div>
-      </div>
-      <div class="skill">
-        <div class="skill-name">Nmap</div>
-        <div class="skill-bar"><div class="skill-bar-fill" style="width: 80%;"></div></div>
-      </div>
-      <div class="skill">
-        <div class="skill-name">Python</div>
-        <div class="skill-bar"><div class="skill-bar-fill" style="width: 75%;"></div></div>
-      </div>
-      <div class="skill">
-        <div class="skill-name">Flask</div>
-        <div class="skill-bar"><div class="skill-bar-fill" style="width: 70%;"></div></div>
-      </div>
-      <div class="skill">
-        <div class="skill-name">MySQL</div>
-        <div class="skill-bar"><div class="skill-bar-fill" style="width: 70%;"></div></div>
-      </div>
-      <div class="skill">
-        <div class="skill-name">Git & GitHub</div>
-        <div class="skill-bar"><div class="skill-bar-fill" style="width: 80%;"></div></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="projects">
-    <h2>Projects</h2>
+<nav aria-label="Primary">
+  <div class="wrap">
+    <a class="logo" href="#top"><i>SS</i>Shafeek Sidhiq</a>
     <ul>
-      <li>✅ Kioptrix VM Exploitation (SMB, Apache mod_ssl, Samba RCE)</li>
-      <li>✅ Flask App: Crime Prediction & Heatmap (with Streamlit version)</li>
-      <li>✅ Hack Yourself First Challenge (XSS, SQLi, CSRF)</li>
-      <li>✅ Cloud VM Setup with Apache, MySQL, and Web Registration System</li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#credentials">Credentials</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
-  </section>
+  </div>
+</nav>
 
-  <section id="certifications">
-    <h2>Certifications</h2>
-    <ul>
-      <li>🎓 Certified Specialist in Cyber Security Analyst – ICT Academy of Kerala</li>
-      <li>🎓 Internship – CERT-K: Web App Auditing, VAPT, Incident Response</li>
-      <li>📜 Ongoing: OSCP (Preparation Phase)</li>
-    </ul>
-  </section>
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <div class="who">
+        <div class="avatar"><img src="profile.jpg" alt="Shafeek Sidhiq" onerror="var a=this.parentNode;a.textContent='SS'"></div>
+        <span>Fujairah, UAE</span>
+      </div>
+      <h1>I find the risk, then build the controls that keep it closed.</h1>
+      <p class="lede">Information security professional with 2+ years in cybersecurity assessments, incident response and vulnerability management, now moving into Governance, Risk &amp; Compliance.</p>
+      <div class="cta">
+        <a class="btn primary" href="#contact">Get in touch</a>
+        <a class="btn ghost" href="#experience">See my experience</a>
+      </div>
+    </div>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <form action="https://formspree.io/f/mvgrvpzy" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-    <p style="margin-top:1.5rem;">Or reach out via:</p>
-    <p>Email: shafeeksidhiq1911@gmail.com</p>
-    <p>
-      <a href="https://www.linkedin.com/in/shafeek-sidhiq" target="_blank" rel="noopener">
-        <img src="linkedin.png" alt="LinkedIn" width="32" height="32">
-      </a>
-      <a href="https://github.com/ShafeekSDQ" target="_blank" rel="noopener">
-        <img src="github.png" alt="GitHub" width="32" height="32">
-      </a>
-    </p>    
-  </section>
+    <div class="matrix-box" id="mbox" aria-label="Animated risk matrix showing a high risk reduced by a control">
+      <div class="matrix-title"><b>Risk register</b><span>Likelihood × impact</span></div>
+      <div class="mx">
+        <div class="ylab">Likelihood</div>
+        <div class="grid" id="grid">
+          <div class="dot r7" id="dot"><b>R7</b></div>
+        </div>
+        <div></div>
+        <div class="xlab">Impact</div>
+      </div>
+      <div class="status"><span class="pill" id="pill">Critical</span><span id="stext">R7: weak access control</span><button type="button" id="replay">Replay</button></div>
+    </div>
+  </div>
+</header>
 
-  <footer>
-    <p>&copy; 2025 Shafeek Sidhiq. All rights reserved.</p>
-  </footer>
->>>>>>> ffa4e306e19320b15d33e88f76f5c438dee84508
+<main>
+<section id="about">
+  <div class="wrap about">
+    <h2>About</h2>
+    <div>
+      <p class="body-serif">I started in the technical end of security: testing about 20 web, mobile, API and cloud applications at CERT-K and supporting 5 incident response activities. Today I run controlled documentation for 15+ construction projects, including 3-4 multi-billion ones, where every revision, approval and record has to stand up to an audit.</p>
+      <p class="body-serif" style="margin-top:18px">That mix is what I bring to GRC: I know how security fails, and I know how paperwork proves it was handled. I work with ISO 27001, risk assessment and privacy law (GDPR, PDPB).</p>
+      <div class="facts">
+        <div><strong>2+ years</strong><span>in information security</span></div>
+        <div><strong>~20</strong><span>applications assessed</span></div>
+        <div><strong>5</strong><span>incident responses supported</span></div>
+        <div><strong>15+</strong><span>projects under document control</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="alt">
+  <div class="wrap">
+    <div class="head"><h2>Experience</h2><p>From hands-on testing and incident work to governing documents and audit trails.</p></div>
+    <div class="tl">
+      <article class="job now">
+        <div class="job-head"><h3>Document Controller</h3><span class="when">Nov 2025 – Present</span></div>
+        <div class="org">Fujairah National Group (Contractor Side), Fujairah, UAE</div>
+        <ul>
+          <li>Manage the controlled documentation lifecycle (RFIs, technical submittals, consultant communications, revisions and project records) across 15+ projects, including 3-4 multi-billion projects, in Autodesk Build.</li>
+          <li>Coordinate submission and approval workflows between contractor, consultant, subcontractors and internal teams, tracking responses and revisions through to closure.</li>
+          <li>Maintain manual and system trackers for approval status, document versions, submission dates, consultant comments and resubmission requirements.</li>
+          <li>Prepare QC reports, meeting minutes and management documentation from site inputs, images and updates, drafting with Copilot and Claude.</li>
+          <li>Strengthen audit readiness and traceability through organized records, version control, approval history and compliance documentation.</li>
+        </ul>
+      </article>
+      <article class="job">
+        <div class="job-head"><h3>Cybersecurity Engineer Trainee</h3><span class="when">Nov 2024 – Sep 2025</span></div>
+        <div class="org">Kerala State IT Mission (CERT-K), Thiruvananthapuram, Kerala</div>
+        <ul>
+          <li>Assessed about 20 applications (web, mobile, API, infrastructure and cloud environments) across pre-staging, post-staging and final testing, following the OWASP Top 10.</li>
+          <li>Found authentication weaknesses, insecure direct object references, input validation flaws and misconfigurations, and documented them for remediation.</li>
+          <li>Supported 5 incident response activities: log review, IOC identification, digital evidence collection, forensic support and threat containment.</li>
+          <li>Wrote vulnerability reports, incident notes and technical documentation for remediation, internal review and compliance.</li>
+          <li>Assisted infrastructure security reviews covering firewall configurations, server hardening and security policy alignment.</li>
+        </ul>
+      </article>
+      <article class="job">
+        <div class="job-head"><h3>Cybersecurity Intern</h3><span class="when">Jul 2024 – Oct 2024</span></div>
+        <div class="org">ICT Academy of Kerala, Thiruvananthapuram, Kerala</div>
+        <ul>
+          <li>Completed Certified Specialist in Cyber Security Analyst training: vulnerability assessment, network security, incident handling and secure application testing.</li>
+          <li>Simulated attacks with Metasploit, Burp Suite, Wireshark and Nmap to understand threat behavior and mitigation.</li>
+          <li>Built and presented capstone projects on vulnerability management, threat modeling and incident handling.</li>
+          <li>Strengthened working knowledge of NIST and ISO 27001.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="head"><h2>Skills</h2><p>Grouped by the work they support. GRC is where I'm heading, so it comes first.</p></div>
+    <div class="skills">
+      <div class="sk focus wide"><h3>Governance, Risk &amp; Compliance</h3>
+        <div class="tags"><span>ISO 27001</span><span>ISMS</span><span>NIST</span><span>Risk Assessment</span><span>Risk Register</span><span>Policy Documentation</span><span>Compliance Tracking</span><span>Audit Support</span><span>Documentation Governance</span><span>Approval Workflow Management</span></div></div>
+      <div class="sk"><h3>Data Privacy</h3>
+        <div class="tags"><span>GDPR</span><span>PDPB</span><span>DPIA</span><span>Data Subject Rights</span><span>Privacy Governance</span></div></div>
+      <div class="sk"><h3>Cybersecurity</h3>
+        <div class="tags"><span>Incident Response</span><span>Vulnerability Assessment</span><span>Pentesting Fundamentals</span><span>OWASP Top 10</span><span>Threat Identification</span><span>Network Security</span><span>Log Analysis</span><span>Security Reporting</span></div></div>
+      <div class="sk"><h3>AI &amp; Productivity</h3>
+        <div class="tags"><span>Generative AI</span><span>Copilot</span><span>Claude</span><span>Prompt Engineering</span><span>AI-Assisted Research</span><span>AI-Assisted Documentation</span><span>Workflow Optimization</span></div></div>
+      <div class="sk"><h3>Tools</h3>
+        <div class="tags"><span>Autodesk Build</span><span>Autodesk Forma</span><span>Burp Suite</span><span>OWASP ZAP</span><span>Wireshark</span><span>Nmap</span><span>Metasploit</span><span>MobSF</span><span>Tenable SC</span><span>Postman</span><span>Kali Linux</span></div></div>
+      <div class="sk wide"><h3>Languages &amp; frameworks</h3>
+        <div class="tags"><span>Python</span><span>Bash</span><span>C</span><span>SQL</span><span>Django</span><span>React</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="alt">
+  <div class="wrap">
+    <div class="head"><h2>Projects</h2><p>Security tooling and GRC deliverables, each tied to a framework or methodology.</p></div>
+    <div class="reg">
+      <article class="row">
+        <div><h3>Websec4U vulnerability scanner</h3><span class="fw">OWASP Top 10 2021 · SANS Top 25</span></div>
+        <ul>
+          <li>Full-stack scanner that automates detection, prioritization and reporting of web security issues.</li>
+          <li>Detection coverage aligned with OWASP Top 10 2021 and SANS Top 25.</li>
+        </ul>
+        <div class="stack">Python, Django, React</div>
+      </article>
+      <article class="row">
+        <div><h3>VAPT capstone project</h3><span class="fw">Standard VAPT methodology</span></div>
+        <ul>
+          <li>Identified and documented 15+ vulnerabilities across test environments.</li>
+          <li>Wrote remediation-focused security reports.</li>
+        </ul>
+        <div class="stack">Security reporting</div>
+      </article>
+      <article class="row">
+        <div><h3>Risk register development</h3><span class="fw">ISO 27001</span></div>
+        <ul>
+          <li>Sample information security risk register covering assets, threats, vulnerabilities, likelihood, impact, risk level, control owner and mitigation actions.</li>
+          <li>Applied ISO 27001 risk assessment concepts to prioritize risks and recommend practical controls.</li>
+        </ul>
+        <div class="stack">GRC deliverable</div>
+      </article>
+      <article class="row">
+        <div><h3>Security policy documentation</h3><span class="fw">ISO 27001</span></div>
+        <ul>
+          <li>Sample password and access control policies covering account security, MFA, password complexity, lockout controls and user responsibility.</li>
+          <li>Mapped policy requirements to control objectives and audit evidence examples.</li>
+        </ul>
+        <div class="stack">GRC deliverable</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="credentials">
+  <div class="wrap">
+    <div class="head"><h2>Credentials</h2><p>Certifications, achievements and education.</p></div>
+    <div class="creds">
+      <div class="cert"><h3>Certified Data Protection Officer (CDPO)</h3><div class="meta">FCRF Academy · Oct 2025</div><p>Data privacy, GDPR, PDPB, DPIA, data subject rights and privacy governance.</p></div>
+      <div class="cert"><h3>Certified Specialist in Cyber Security Analyst (CSA)</h3><div class="meta">ICT Academy of Kerala · Oct 2024</div><p>Ethical hacking, vulnerability management, network security and incident handling.</p></div>
+      <div class="cert" style="grid-column:1/-1"><h3>Top 10% of learners on TryHackMe</h3><div class="meta">Achievement</div><p>Ranked through hands-on cybersecurity labs.</p></div>
+    </div>
+    <p class="sub">Education</p>
+    <div class="edu">
+      <div><h3>B.Tech, Computer Science and Engineering</h3><p>Musaliar College of Engineering, APJ Abdul Kalam Technological University · 2020 – 2024</p></div>
+      <div><h3>Class XII</h3><p>KTCT EMR HSS, Kerala Board of Higher Secondary Education · 2018 – 2020</p></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2>Looking for a GRC or information security role?</h2>
+    <p class="lede">I'm open to GRC, compliance and information security opportunities. Email is the fastest way to reach me.</p>
+    <div class="links">
+      <a href="mailto:shafeeksidhiq1911@gmail.com"><small>Email</small><span>shafeeksidhiq1911@gmail.com</span></a>
+      <a href="https://www.linkedin.com/in/shafeek-sidhiq" target="_blank" rel="noopener"><small>LinkedIn</small><span>shafeek-sidhiq</span></a>
+      <a href="https://github.com/ShafeekSDQ" target="_blank" rel="noopener"><small>GitHub</small><span>ShafeekSDQ</span></a>
+    </div>
+    <footer><span>© 2026 Shafeek Sidhiq</span><span>Fujairah, UAE</span></footer>
+  </div>
+</section>
+
+<script>
+(function(){
+  // build 5x5 matrix: row 0 = highest likelihood
+  var grid=document.getElementById('grid'),dot=document.getElementById('dot');
+  var cols=['var(--risk-lo)','var(--risk-md)','var(--risk-hi)','var(--risk-cr)'];
+  for(var r=0;r<5;r++)for(var c=0;c<5;c++){
+    var score=(5-r)*(c+1); // likelihood*impact
+    var i=score<=4?0:score<=9?1:score<=15?2:3;
+    var s=document.createElement('span');s.style.background=cols[i];s.style.opacity=.85;
+    grid.insertBefore(s,dot);
+  }
+  var box=document.getElementById('mbox'),pill=document.getElementById('pill'),st=document.getElementById('stext');
+  var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function setTreated(t){
+    box.classList.toggle('treated',t);
+    pill.textContent=t?'Treated':'Critical';
+    st.textContent=t?'R7: MFA and lockout controls applied':'R7: weak access control';
+  }
+  function run(){
+    setTreated(false);
+    void box.offsetWidth;
+    setTimeout(function(){setTreated(true)}, rm?0:700);
+  }
+  document.getElementById('replay').addEventListener('click',function(){
+    box.classList.remove('treated');pill.textContent='Critical';st.textContent='R7: weak access control';
+    setTimeout(run,60);
+  });
+  run();
+})();
+</script>
 </body>
 </html>
