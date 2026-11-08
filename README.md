@@ -1,30 +1,28 @@
-# Shafeek Sidhiq | Cybersecurity Portfolio
+# Shafeek Sidhiq | Information Security & GRC Portfolio
 
-This is my personal portfolio website built using HTML, CSS, and deployed via GitHub Pages.
+Personal portfolio of Shafeek Sidhiq, an information security professional with 2+ years of experience in cybersecurity assessments, incident response and vulnerability management, now moving into Governance, Risk & Compliance (GRC).
 
-## 🚀 Live URL
-https://shafeeksdq.github.io/portfolio/
+**Live site:** https://shafeeksdq.github.io/portfolio/
 
-## 🛠️ Tech Stack
-- HTML5
-- CSS3
-- Formspree (for contact form)
-- GitHub Pages (for hosting)
+## Sections
+- **About:** summary and key numbers
+- **Experience:** Document Controller, Cybersecurity Engineer Trainee (CERT-K), Cybersecurity Intern
+- **Skills:** GRC, data privacy, cybersecurity, AI and productivity, tools, languages and frameworks
+- **Projects:** Websec4U scanner, VAPT capstone, ISO 27001 risk register and security policy documentation
+- **Credentials:** certifications, achievements and education
+- **Contact:** email, LinkedIn and GitHub
 
-## 📁 Sections
-- About Me
-- Skills
-- Projects
-- Certifications
-- Contact
+## Tech
+- Single static `index.html` with inline CSS and JavaScript, no build step
+- Fonts from Google Fonts (Newsreader, Schibsted Grotesk)
+- Hosted on GitHub Pages from the `main` branch
 
-## 🔧 How to Use
-1. Clone the repo or fork it
-2. Add your own content and images
-3. Push to GitHub
-4. Enable Pages in repo settings
+## Files
+- `index.html`: the whole site
+- `profile.jpg`: profile photo shown in the hero
+- `favicon.svg`: browser tab icon
 
-## 📬 Contact
-Email: shafeeksidhiq1911@gmail.com  
-GitHub: https://github.com/ShafeekSDQ
-LinkedIn:https://linkedin.com/in/shafeek-sidhiq
+## Contact
+- Email: shafeeksidhiq1911@gmail.com
+- LinkedIn: https://www.linkedin.com/in/shafeek-sidhiq
+- GitHub: https://github.com/ShafeekSDQ
